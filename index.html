@@ -231,9 +231,6 @@
     }
 
     var dpIDsub = {};
-    var Imgs;
-    var currentphoto = 0;
-    let oldphoto;
 
     function showsection(e) {
         dpIDsub = e.currentTarget.id;
@@ -241,15 +238,6 @@
         document.getElementsByClassName(dpIDsub)[0].classList.remove('hide');
         document.getElementsByClassName(dpIDsub)[0].classList.add('show');
         dropDownMenu[0].classList.add('hide');
-        Imgs = 'Imgs' + dpIDsub;
-        let imgs = document.getElementsByClassName(Imgs);
-        if (currentphoto > 0) {
-            imgs[currentphoto].classList.remove('show');
-            imgs[currentphoto].classList.add('hide');
-            currentphoto = 0;
-        }
-        imgs[0].classList.remove('hide');
-        imgs[0].classList.add('show');
     }
 
     function dropdownmenu() {
@@ -257,8 +245,6 @@
         dropDownMenu[0].classList.toggle("show");
         document.getElementsByClassName(dpIDsub)[0].classList.remove('show');
         document.getElementsByClassName(dpIDsub)[0].classList.add('hide');
-        // fish[0].classList.remove('hide');
-        // fish[0].classList.add('show');
     }
 
 
@@ -314,16 +300,30 @@
     let dropDownContent = document.getElementsByClassName("dropdown-content");
     let arrowDown = document.getElementsByClassName("arrowDown");
     var current = 0;
+    var currentphoto = 1;
 
     for (let j = 0; j < dropDownContent.length; j++) {
         dropName[j].addEventListener("click", dropdown);
     }
 
+    var imgsw = {};
+    var imgswOld = {};
+
+
+
     function dropdown(e) {
         var dpID = e.currentTarget.id.split("-")[1];
         let old = current;
+        imgswOld = document.getElementsByClassName('Imgs' + old);
+        imgswOld[currentphoto].classList.remove('show');
+        imgswOld[currentphoto].classList.add('hide');
         current = dpID;
-        let imgsw = document.getElementsByClassName('Imgs' + current);
+        imgsw = document.getElementsByClassName('Imgs' + current);
+        if (currentphoto > 0) {
+            imgsw[currentphoto].classList.remove('show');
+            imgsw[currentphoto].classList.add('hide');
+            currentphoto = 0;
+        }
         imgsw[0].classList.remove('hide');
         imgsw[0].classList.add('show');
         imgsw[0].classList.add('Imgs');
@@ -339,7 +339,6 @@
         }
     }
 
-    var currentphoto = 0;
 
     let pervios = document.getElementsByClassName('perviosImg');
     let next = document.getElementsByClassName('nextImg');
@@ -356,7 +355,6 @@
 
 
     function previouspage() {
-        let imgsw = document.getElementsByClassName('Imgs' + current);
         let oldphoto = currentphoto;
         currentphoto -= 1;
         currentphoto = currentphoto < 0 ? 0 : currentphoto;
@@ -367,7 +365,6 @@
     }
 
     function nextpage() {
-        let imgsw = document.getElementsByClassName('Imgs' + current);
         let oldphoto = currentphoto;
         currentphoto += 1;
         currentphoto = currentphoto > (imgsw.length - 1) ? (imgsw.length - 1) : currentphoto;
