@@ -1,0 +1,163 @@
+@font-face {
+        font-family: "Century Gothic";
+        src: url('Font/Century_Gothic.ttf') format('truetype');
+    }
+
+    body {
+        font-family: Century Gothic;
+    }
+
+    .head {
+        margin: 50px;
+        color: rgba(128, 128, 128, 0.95);
+    }
+
+    .menu {
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .subMenu {
+        padding: 10px;
+        margin: 0 50px;
+        font-size: 20px;
+    }
+
+    .leila {
+        text-align: center;
+        font-size: 20px;
+        padding: 10px;
+        margin: 0 50px;
+        color: rgba(128, 128, 128, 0.95);
+    }
+
+    .dropDown-menu {
+        text-align: center;
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .picture {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .flex {
+        display: flex;
+    }
+
+    .home,
+    .work,
+    .about,
+    .contact {
+        margin-top: 15vh;
+    }
+
+    .changeImg {
+        margin: 50px 5px 0 5px;
+    }
+
+    .perviosImg,
+    .nextImg {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 15%;
+        text-align: center;
+        color: rgba(128, 128, 128, 0.95);
+    }
+
+    .Imgs {
+        width: 70%;
+    }
+
+    .galleryImg {
+        width: 25%;
+        border-radius: 10px;
+    }
+
+    .Photo {
+        width: -webkit-fill-available;
+        border-radius: 10px;
+    }
+
+    .sectionName {
+        text-align: center;
+        color: rgba(128, 128, 128, 0.95);
+        font-size: 25px;
+    }
+
+    #rooot {
+        margin-top: 25px;
+        padding-bottom: 9px;
+    }
+
+    .dropdown {
+        position: relative;
+        margin-top: 19px;
+        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+    }
+
+    .name {
+        padding: 12px 16px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        color: rgba(128, 128, 128, 0.95);
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .galleryName {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 40%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .arrowDown {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB0SURBVHgBfc6BDYAgDATAlkmATdxEN3ADWcUN3IBV2AS/Coli6yeEkvRoOYSQicjXWqeCkJEY44aehLM4AXKYOXvkD7SndzIBRbHgE+DesUziiyIC2tTSV1XALDX3H0eI+kDjOoIXUiBp4INGqAEz/o7ZfAKboFiuUvG80gAAAABJRU5ErkJggg==");
+        position: absolute;
+        top: 22px;
+        right: 25px;
+    }
+
+    .arrowUp {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACnSURBVHgBdY/BDQIhEEUduHi0hG3BOwe3g7UC1w48AUe8EUJiCWolnijADijBOwk4GEk2ZPYnwwyfeTDAhpBS6p5zPgCAcc49+3O+AsxY7jAmIUQMIbxXoQVQ9cHYUiCjgFLKlXO+x/Hif/+QUp5aL1CA997UWms9oP9Cb/g1A8z1j4A33NC89EBTD2IeGfXCUtbayBgb26iYJ4ZLNY4U0INYnlNK5gtYFnANEDmJ/wAAAABJRU5ErkJggg==");
+    }
+
+    .dropbtn {
+        width: 5%;
+        padding: 5px 7px;
+        background-color: #ffffff;
+        border: none;
+        background-repeat: no-repeat;
+        margin-left: -8px;
+    }
+
+    .dropdown-content {
+        display: none;
+        background-color: #ffffff;
+        width: 100%;
+        z-index: 10;
+        border-radius: 0px 0px 8px 8px;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .show {
+        display: block;
+    }
