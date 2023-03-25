@@ -88,12 +88,17 @@
         width: 70%;
     }
 
+    .galleryImg {
+        width: 25%;
+        border-radius: 10px;
+    }
+
     .Photo {
         width: -webkit-fill-available;
         border-radius: 10px;
     }
 
-    .galleryName {
+    .sectionName {
         text-align: center;
         color: rgba(128, 128, 128, 0.95);
         font-size: 25px;
@@ -119,7 +124,17 @@
         line-height: 28px;
         color: rgba(128, 128, 128, 0.95);
         background-color: #ffffff;
-        border-radius: 8px;
+        border-radius: 10px;
+    }
+
+    .galleryName {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 40%;
+        text-align: center;
+        border-radius: 10px;
     }
 
     .arrowDown {
@@ -204,16 +219,16 @@
         </svg>
     </div>
     <div class="home hide">
-        <div class="galleryName"> Home</div>
+        <div class="sectionName"> Home</div>
     </div>
     <div class="work hide">
         <div id="rooot"></div>
     </div>
     <div class="about hide">
-        <div class="galleryName">About</div>
+        <div class="sectionName">About</div>
     </div>
     <div class="contact hide">
-        <div class="galleryName">Contact</div>
+        <div class="sectionName">Contact</div>
     </div>
 
 </body>
@@ -233,7 +248,6 @@
     var dpIDsub = 'work';
 
     function showsection(e) {
-        console.log(dpIDsub);
         document.getElementsByClassName(dpIDsub)[0].classList.remove('show');
         document.getElementsByClassName(dpIDsub)[0].classList.add('hide');
         dpIDsub = e.currentTarget.id;
@@ -253,10 +267,10 @@
 
 
     var sampleJs = [
-        { Name: "Galllery1", Photo1:"/Photo/card21.png" , Photo2:"/Photo/card22.png" , Photo3:"/Photo/card23.png" , Photo4:"/Photo/card24.png" , Photo5:"/Photo/card25.png" , Photo6:"/Photo/card26.png" },
-        { Name: "Galllery2", Photo1:"/Photo/card27.png" , Photo2:"/Photo/card28.png" , Photo3:"/Photo/card31.png" , Photo4:"/Photo/card32.png" , Photo5:"/Photo/card33.png" , Photo6:"/Photo/card25.png" },
-        { Name: "Galllery3", Photo1:"/Photo/card34.png" , Photo2:"/Photo/card35.png" , Photo3:"/Photo/card41.png" , Photo4:"/Photo/card42.png" , Photo5:"/Photo/card43.png" , Photo6:"/Photo/card44.png" },
-        { Name: "Galllery4", Photo1:"/Photo/card51.png" , Photo2:"/Photo/card52.png" , Photo3:"/Photo/card53.png" , Photo4:"/Photo/card54.png" , Photo5:"/Photo/card55.png" , Photo6:"/Photo/card56.png" },
+        { Name: "Galllery1", Photo1: "/Photo/card21.png", Photo2: "/Photo/card22.png", Photo3: "/Photo/card23.png", Photo4: "/Photo/card24.png", Photo5: "/Photo/card25.png", Photo6: "/Photo/card26.png" },
+        { Name: "Galllery2", Photo1: "/Photo/card27.png", Photo2: "/Photo/card28.png", Photo3: "/Photo/card31.png", Photo4: "/Photo/card32.png", Photo5: "/Photo/card33.png", Photo6: "/Photo/card25.png" },
+        { Name: "Galllery3", Photo1: "/Photo/card34.png", Photo2: "/Photo/card35.png", Photo3: "/Photo/card41.png", Photo4: "/Photo/card42.png", Photo5: "/Photo/card43.png", Photo6: "/Photo/card44.png" },
+        { Name: "Galllery4", Photo1: "/Photo/card51.png", Photo2: "/Photo/card52.png", Photo3: "/Photo/card53.png", Photo4: "/Photo/card54.png", Photo5: "/Photo/card55.png", Photo6: "/Photo/card56.png" },
     ];
 
     function showstore(arr) {
@@ -264,18 +278,18 @@
         for (let i = 0; i < arr.length; i++) {
             var countphoto = Object.keys(arr[i]);
             st += `<div class="dropdown">
-                       <div class="name" id="dp-${i}">
-                           ${arr[i].Name}
+                       <div class="name flex" id="dp-${i}">
+                           <div class="galleryName">${arr[i].Name}</div><img class="galleryImg" src="${arr[i][countphoto[1]]}" >
                            <button class="dropbtn arrowDown" >
                            </button>
                        </div>
                        <div class="dropdown-content">
                                     <div class="changeImg flex">
                                       <div class="perviosImg">&laquo;</div>`;
-                                      for (let j = 1; j < countphoto.length; j++){
-                                        st += `<div class="Imgs${i} hide"><img class="Photo" src="${arr[i][countphoto[j]]}" ></div>`;
-                                      }
-                                     st +=`<div class="nextImg">&raquo;</div>
+            for (let j = 1; j < countphoto.length; j++) {
+                st += `<div class="Imgs${i} hide"><img class="Photo" src="${arr[i][countphoto[j]]}" ></div>`;
+            }
+            st += `<div class="nextImg">&raquo;</div>
                                     </div>
                         </div>
                     </div>`;
