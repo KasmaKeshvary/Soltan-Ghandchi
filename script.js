@@ -27,12 +27,10 @@ function dropdownmenu() {
 var sampleJs = [
   {
     Name: "Gallery1",
-    Photo1: "/Photo/card21.png",
+    Photo1: "/Photo/2.png",
     Photo2: "/Photo/card22.png",
     Photo3: "/Photo/card23.png",
     Photo4: "/Photo/card24.png",
-    Photo5: "/Photo/card25.png",
-    Photo6: "/Photo/card26.png",
   },
   {
     Name: "Gallery2",
@@ -40,8 +38,6 @@ var sampleJs = [
     Photo2: "/Photo/card28.png",
     Photo3: "/Photo/card31.png",
     Photo4: "/Photo/card32.png",
-    Photo5: "/Photo/card33.png",
-    Photo6: "/Photo/card25.png",
   },
   {
     Name: "Gallery3",
@@ -49,8 +45,6 @@ var sampleJs = [
     Photo2: "/Photo/card35.png",
     Photo3: "/Photo/card41.png",
     Photo4: "/Photo/card42.png",
-    Photo5: "/Photo/card43.png",
-    Photo6: "/Photo/card44.png",
   },
   {
     Name: "Gallery4",
@@ -58,45 +52,37 @@ var sampleJs = [
     Photo2: "/Photo/card52.png",
     Photo3: "/Photo/card53.png",
     Photo4: "/Photo/card54.png",
-    Photo5: "/Photo/card55.png",
-    Photo6: "/Photo/card56.png",
   },
 ];
 
-function showstore(arr) {
+function showgallery(arr) {
   var st = `<div>`;
   for (let i = 0; i < arr.length; i++) {
     var countphoto = Object.keys(arr[i]);
     st += `<div class="dropdown">
-                       <div class="name flex" id="dp-${i}">
-                           <img class="galleryImg" src="${
-                             arr[i][countphoto[1]]
-                           }" >
-                           <div class="galleryName">${arr[i].Name}</div>
-                       </div>
-                       <div class="dropdown-content">
-                          <span class="close cursor">×</span>
-                          <div class="changeImg">
-                            <div class="perviosImg">❮</div>`;
-    for (let j = 1; j < countphoto.length; j++) {
-      st += `<div class="Imgs${i} hide">
-                               <div class="numbertext">${j} / ${
-        countphoto.length - 1
-      }</div>
-                               <img class="Photo" src="${
-                                 arr[i][countphoto[j]]
-                               }" >
-                               </div>`;
-    }
-    st += `<div class="nextImg">❯</div>
-                          </div>
-                        </div>
-                    </div>`;
+             <div class="name flex" id="dp-${i}">
+                 <img class="galleryImg" src="${arr[i][countphoto[1]]}" >
+                 <div class="galleryName">${arr[i].Name}</div>
+             </div>
+             <div class="dropdown-content">
+                <span class="close cursor">×</span>
+                <div class="changeImg">
+                  <div class="perviosImg">❮</div>`;
+                  for (let j = 1; j < countphoto.length; j++) {
+                  st += `<div class="Imgs${i} hide">
+                         <div class="numbertext">${j} / ${countphoto.length - 1}</div>
+                         <img class="Photo" src="${arr[i][countphoto[j]]}" >
+                        </div>`;
+                    }
+                   st += `<div class="nextImg">❯</div>
+                </div>
+              </div>
+          </div>`;
   }
   st += `</div>`;
   document.getElementById("rooot").innerHTML = st;
 }
-showstore(sampleJs);
+showgallery(sampleJs);
 
 let dropName = document.getElementsByClassName("name");
 let dropDownContent = document.getElementsByClassName("dropdown-content");
@@ -120,6 +106,9 @@ function dropdown(e) {
   imgswOld[currentphoto].classList.add("hide");
   current = dpID;
   imgsw = document.getElementsByClassName("Imgs" + current);
+  if(currentphoto>(imgsw.length-1)){
+    currentphoto = imgsw.length-2;
+  }
   if (currentphoto > 0) {
     imgsw[currentphoto].classList.remove("show");
     imgsw[currentphoto].classList.add("hide");
@@ -127,7 +116,6 @@ function dropdown(e) {
   }
   imgsw[0].classList.remove("hide");
   imgsw[0].classList.add("show");
-  imgsw[0].classList.add("Imgs");
 
   if (current === old) {
     dropDownContent[current].classList.toggle("show");
