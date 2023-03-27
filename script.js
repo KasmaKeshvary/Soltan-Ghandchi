@@ -66,15 +66,17 @@ function showgallery(arr) {
              </div>
              <div class="dropdown-content">
                 <span class="close cursor">×</span>
-                <div class="changeImg">
-                  <div class="perviosImg">❮</div>`;
-                  for (let j = 1; j < countphoto.length; j++) {
-                  st += `<div class="Imgs${i} hide">
-                         <div class="numbertext">${j} / ${countphoto.length - 1}</div>
-                         <img class="Photo" src="${arr[i][countphoto[j]]}" >
-                        </div>`;
-                    }
-                   st += `<div class="nextImg">❯</div>
+                <div class="center flex">
+                   <div class="changeImg">
+                     <div class="perviosImg">❮</div>`;
+                     for (let j = 1; j < countphoto.length; j++) {
+                     st += `<div class="Imgs${i} hide">
+                            <div class="numbertext">${j} / ${countphoto.length - 1}</div>
+                            <img class="Photo" src="${arr[i][countphoto[j]]}" >
+                           </div>`;
+                       }
+                      st += `<div class="nextImg">❯</div>
+                   </div>
                 </div>
               </div>
           </div>`;
