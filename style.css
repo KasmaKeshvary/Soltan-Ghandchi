@@ -1,271 +1,189 @@
 @font-face {
-        font-family: "Century Gothic";
-        src: url('/Font/CenturyGothic.ttf') format('truetype');
-    }
+  font-family: "Century Gothic";
+  src: url("Font/Century_Gothic.ttf") format("truetype");
+}
 
-    body {
-        font-family: Century Gothic;
-    }
+body {
+  font-family: Century Gothic;
+}
 
-    .head {
-        margin: 50px;
-        color: rgba(128, 128, 128, 0.95);
-    }
+.head {
+  margin: 50px;
+  color: rgba(128, 128, 128, 0.95);
+}
 
-    .menu {
-        text-align: center;
-        padding: 10px;
-        font-size: 20px;
-    }
+.menu {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
 
-    .subMenu {
-        padding: 10px;
-        margin: 0 50px;
-        font-size: 20px;
-    }
+.subMenu {
+  padding: 10px;
+  margin: 0 50px;
+  font-size: 20px;
+}
 
-    .leila {
-        text-align: center;
-        font-size: 20px;
-        padding: 10px;
-        margin: 0 50px;
-        color: rgba(128, 128, 128, 0.95);
-    }
+.leila {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  margin: 0 50px;
+  color: rgba(128, 128, 128, 0.95);
+}
 
-    .dropDown-menu {
-        text-align: center;
-        display: none;
-    }
+.dropDown-menu {
+  text-align: center;
+  display: none;
+}
 
+.show {
+  display: block;
+}
 
-    .picture {
-        width: 100%;
-        display: block;
-        margin: auto;
-    }
+.picture {
+  width: 90%;
+  display: block;
+  margin: auto;
+}
 
-    .hide {
-        display: none;
-    }
+.hide {
+  display: none;
+}
 
-    .flex {
-        display: flex;
-    }
+.flex {
+  display: flex;
+}
 
-    .home,
-    .work,
-    .about,
-    .contact {
-        margin-top: 15vh;
-    }
+.home,
+.work,
+.about,
+.contact {
+  margin-top: 15vh;
+}
 
-    .changeImg {
-        margin: 50px 5px 0 5px;
-    }
+.changeImg {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
 
-    .perviosImg,
-    .nextImg {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 15%;
-        text-align: center;
-        color: rgba(128, 128, 128, 0.95);
-    }
+.perviosImg,
+.nextImg {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  color: rgba(254, 254, 254, 0.95);
+}
 
-    .Imgs {
-        width: 70%;
-    }
+.nextImg {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
 
-    .galleryImg {
-        width: 25%;
-        border-radius: 10px;
-    }
-
-    .Photo {
-        width: -webkit-fill-available;
-        border-radius: 10px;
-    }
-
-    .sectionName {
-        text-align: center;
-        color: rgba(128, 128, 128, 0.95);
-        font-size: 25px;
-    }
-
-    #rooot {
-        margin-top: 25px;
-        padding-bottom: 9px;
-    }
-
-    .dropdown {
-        position: relative;
-        margin-top: 19px;
-        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
-        border-radius: 8px;
-    }
-
-    /* .name {
-        padding: 12px 16px;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 28px;
-        color: rgba(128, 128, 128, 0.95);
-        background-color: #ffffff;
-        border-radius: 10px;
-    } */
-
-    /* .galleryName {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 40%;
-        text-align: center;
-        border-radius: 10px;
-    } */
-
-    /* .arrowDown {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAB0SURBVHgBfc6BDYAgDATAlkmATdxEN3ADWcUN3IBV2AS/Coli6yeEkvRoOYSQicjXWqeCkJEY44aehLM4AXKYOXvkD7SndzIBRbHgE+DesUziiyIC2tTSV1XALDX3H0eI+kDjOoIXUiBp4INGqAEz/o7ZfAKboFiuUvG80gAAAABJRU5ErkJggg==");
-        position: absolute;
-        top: 22px;
-        right: 25px;
-    }
-
-    .arrowUp {
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACnSURBVHgBdY/BDQIhEEUduHi0hG3BOwe3g7UC1w48AUe8EUJiCWolnijADijBOwk4GEk2ZPYnwwyfeTDAhpBS6p5zPgCAcc49+3O+AsxY7jAmIUQMIbxXoQVQ9cHYUiCjgFLKlXO+x/Hif/+QUp5aL1CA997UWms9oP9Cb/g1A8z1j4A33NC89EBTD2IeGfXCUtbayBgb26iYJ4ZLNY4U0INYnlNK5gtYFnANEDmJ/wAAAABJRU5ErkJggg==");
-    }
-
-    .dropbtn {
-        width: 5%;
-        padding: 5px 7px;
-        background-color: #ffffff;
-        border: none;
-        background-repeat: no-repeat;
-        margin-left: -8px;
-    }
-
-    .dropdown-content {
-        display: none;
-        background-color: #ffffff;
-        width: 100%;
-        z-index: 10;
-        border-radius: 0px 0px 8px 8px;
-        border-top: 1px solid #eeeeee;
-    } */
-
-    .show {
-        display: block;
-    }
-
-   * {
-            box-sizing: border-box
-        }
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
 
 
-        .mySlides {
-            display: block;
-        }
+.galleryImg {
+  width: 50%;
+  border-radius: 10px;
+}
 
-        img {
-            vertical-align: middle;
-        }
+.Photo {
+  width: -webkit-fill-available;
+  border-radius: 10px;
+}
 
-        /* Slideshow container */
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: auto;
-        }
+.sectionName {
+  text-align: center;
+  color: rgba(128, 128, 128, 0.95);
+  font-size: 25px;
+}
 
-        /* Next & previous buttons */
-        .prev,
-        .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-        }
+#rooot {
+  margin-top: 25px;
+  padding-bottom: 9px;
+}
 
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
+.dropdown {
+  position: relative;
+  margin-top: 19px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+}
 
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover,
-        .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
+.name {
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: rgba(128, 128, 128, 0.95);
+  background-color: #ffffff;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+}
 
-        /* Caption text */
-        .text {
-            color: #f2f2f2;
-            font-size: 15px;
-            padding: 8px 12px;
-            position: absolute;
-            bottom: 8px;
-            width: 100%;
-            text-align: center;
-        }
+.galleryName {
+  width: 40%;
+  text-align: center;
+  border-radius: 10px;
+}
 
-        /* Number text (1/3 etc) */
-        .numbertext {
-            color: #f2f2f2;
-            font-size: 12px;
-            padding: 8px 12px;
-            position: absolute;
-            top: 0;
-        }
+.galleryName:hover,.galleryImg:hover{
+  cursor: pointer;
+}
 
-        /* The dots/bullets/indicators */
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
+.dropdown-content {
+  display: none;
+  width: 100%;
+  border-radius: 0px 0px 8px 8px;
+  border-top: 1px solid #eeeeee;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
 
-        .active,
-        .dot:hover {
-            background-color: #717171;
-        }
+.show {
+  display: block;
+}
 
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
 
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
 
-            to {
-                opacity: 1
-            }
-        }
-
-        /* On smaller screens, decrease text size */
-        @media only screen and (max-width: 300px) {
-
-            .prev,
-            .next,
-            .text {
-                font-size: 11px
-            }
-        }
+.cursor {
+  cursor: pointer;
+}
