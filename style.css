@@ -140,7 +140,6 @@ body {
 
 .changeImg {
   width: 100%;
-  position: relative;
   position: absolute;
   top: 30vh;
   height: 40vh;
