@@ -139,11 +139,11 @@ body {
 
 
 .changeImg {
-  max-width: 1000px;
+  width: 100%;
   position: relative;
   position: absolute;
-  top: 35vh;
-  height: 30vh;
+  top: 30vh;
+  height: 40vh;
 }
 
 .perviosImg,
@@ -162,11 +162,6 @@ body {
   color: rgba(0, 0, 0, 0.95);
 }
 
-.center{
-   display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .numbertext {
   color: #f2f2f2;
@@ -181,7 +176,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  height: 30vh;
+  height: 40vh;
 }
 
 .nextImg {
