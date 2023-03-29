@@ -70,16 +70,22 @@ function showgallery(arr) {
                 <span class="close cursor">×</span>
                 <div class="center flex">
                    <div class="changeImg">
-                     <div class="topphototext">some text</div>`;
+                     <div class="topphototext">some text</div>
+                     <div class="lftrgttxftpht">
+                     <div class="leftphototext">some text</div>`;
                      for (let j = 1; j < countphoto.length; j++) {
-                     st += `<div class="Imgs${i} hide">
+                     st += `<div class="Imgs${i} webk hide">
                             <div class="numbertext">${j} / ${countphoto.length - 1}</div>
-                               <div class="perviosImg center">❮</div>
-                               <div class="nextImg center">❯</div>
-                            <img class="Photo" src="${arr[i][countphoto[j]]}" >
+                            <div class="pernex">
+                               <div class="perviosImg">❮</div>
+                               <img class="Photo" src="${arr[i][countphoto[j]]}">
+                               <div class="nextImg">❯</div>
+                            </div>
                            </div>`;
                        }          
-              st += `<div class="bottomphototext">some text</div>
+              st += `<div class="rightphototext">some text</div>
+                     </div>
+                     <div class="bottomphototext">some text</div>
                   </div>
                 </div>
               </div>
