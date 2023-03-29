@@ -29,7 +29,7 @@ var sampleJs = [
     Name: "Gallery1",
     Photo1: "/Photo/2.png",
     Photo2: "/Photo/card22.png",
-    Photo3: "/Photo/card23.png",
+    Photo3: "/Photo/main.jpeg",
     Photo4: "/Photo/card24.png",
   },
   {
@@ -55,6 +55,8 @@ var sampleJs = [
   },
 ];
 
+dropsubmenu[1].addEventListener("click", showgallery(sampleJs)); 
+
 function showgallery(arr) {
   var st = `<div>`;
   for (let i = 0; i < arr.length; i++) {
@@ -68,15 +70,17 @@ function showgallery(arr) {
                 <span class="close cursor">×</span>
                 <div class="center flex">
                    <div class="changeImg">
-                     <div class="perviosImg">❮</div>`;
+                     <div class="topphototext">some text</div>`;
                      for (let j = 1; j < countphoto.length; j++) {
                      st += `<div class="Imgs${i} hide">
                             <div class="numbertext">${j} / ${countphoto.length - 1}</div>
+                               <div class="perviosImg center">❮</div>
+                               <div class="nextImg center">❯</div>
                             <img class="Photo" src="${arr[i][countphoto[j]]}" >
                            </div>`;
-                       }
-                      st += `<div class="nextImg">❯</div>
-                   </div>
+                       }          
+              st += `<div class="bottomphototext">some text</div>
+                  </div>
                 </div>
               </div>
           </div>`;
@@ -84,7 +88,7 @@ function showgallery(arr) {
   st += `</div>`;
   document.getElementById("rooot").innerHTML = st;
 }
-showgallery(sampleJs);
+
 
 let dropName = document.getElementsByClassName("name");
 let dropDownContent = document.getElementsByClassName("dropdown-content");
@@ -151,8 +155,7 @@ function previouspage() {
 function nextpage() {
   let oldphoto = currentphoto;
   currentphoto += 1;
-  currentphoto =
-    currentphoto > imgsw.length - 1 ? imgsw.length - 1 : currentphoto;
+  currentphoto = currentphoto > imgsw.length - 1 ? imgsw.length - 1 : currentphoto;
   imgsw[oldphoto].classList.remove("show");
   imgsw[oldphoto].classList.add("hide");
   imgsw[currentphoto].classList.remove("hide");
