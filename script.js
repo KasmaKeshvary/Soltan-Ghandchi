@@ -26,32 +26,37 @@ function dropdownmenu() {
 
 var sampleJs = [
   {
-    Name: "Gallery1",
-    Photo1: "/Photo/2.png",
-    Photo2: "/Photo/card22.png",
-    Photo3: "/Photo/main.jpeg",
-    Photo4: "/Photo/card24.png",
+    Name: "Immediate Gratification",
+    Photo1: "/Photo/Immediate Gratification/2.png",
+    Note1: "This is sometext about Photo 1 of Immediate Gratification Gallery",
+    Photo2: "/Photo/Immediate Gratification/card22.png",
+    Note2: "This is sometext about Photo 2 of Immediate Gratification Gallery",
+    Photo3: "/Photo/Immediate Gratification/main.jpeg",
+    Note3: "This is sometext about Photo 3 of Immediate Gratification Gallery",
+    Photo4: "/Photo/Immediate Gratification/card24.png",
+    Note4: "This is sometext about Photo 4 of Immediate Gratification Gallery",
   },
   {
-    Name: "Gallery2",
-    Photo1: "/Photo/card27.png",
-    Photo2: "/Photo/card28.png",
-    Photo3: "/Photo/card31.png",
-    Photo4: "/Photo/card32.png",
+    Name: "To the Bone",
+    Photo1: "/Photo/To the Bone/card27.png",
+    Note1: "This is sometext about Photo 1 of To the Bone Gallery",
+    Photo2: "/Photo/To the Bone/card28.png",
+    Note2: "This is sometext about Photo 2 of To the Bone Gallery",
+    Photo3: "/Photo/To the Bone/card31.png",
+    Note3: "This is sometext about Photo 3 of To the Bone Gallery",
+    Photo4: "/Photo/To the Bone/card32.png",
+    Note4: "This is sometext about Photo 4 of To the Bone Gallery",
   },
   {
-    Name: "Gallery3",
-    Photo1: "/Photo/card34.png",
-    Photo2: "/Photo/card35.png",
-    Photo3: "/Photo/card41.png",
-    Photo4: "/Photo/card42.png",
-  },
-  {
-    Name: "Gallery4",
-    Photo1: "/Photo/card51.png",
-    Photo2: "/Photo/card52.png",
-    Photo3: "/Photo/card53.png",
-    Photo4: "/Photo/card54.png",
+    Name: "Circle of Desensitization",
+    Photo1: "/Photo/Circle of Desensitization/card34.png",
+    Note1: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Photo2: "/Photo/Circle of Desensitization/card35.png",
+    Note2: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Photo3: "/Photo/Circle of Desensitization/card41.png",
+    Note3: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Photo4: "/Photo/Circle of Desensitization/card42.png",
+    Note4: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
   },
 ];
 
@@ -69,27 +74,20 @@ function showgallery(arr) {
              <div class="dropdown-content">
                 <span class="close cursor">×</span>
                 <div class="center flex">
-                   <div class="changeImg">
-                     <div class="topphototext">some text</div>
-                     <div class="lftrgttxftpht">
-                     <div class="leftphototext">some text</div>`;
-                     for (let j = 1; j < countphoto.length; j++) {
+                   <div class="changeImg">`;
+                     for (let j = 1; j < countphoto.length; j += 2) {
                      st += `<div class="Imgs${i} webk hide">
-                            <div class="numbertext">${j} / ${countphoto.length - 1}</div>
-                            <div class="pernex">
+                               <div class="numbertext">${(j+1)/2} / ${(countphoto.length - 1)/2}</div>
                                <div class="perviosImg">❮</div>
                                <img class="Photo" src="${arr[i][countphoto[j]]}">
                                <div class="nextImg">❯</div>
-                            </div>
+                               <div class="bottomphototext">${arr[i][countphoto[j+1]]}</div>
                            </div>`;
                        }          
-              st += `<div class="rightphototext">some text</div>
-                     </div>
-                     <div class="bottomphototext">some text</div>
-                  </div>
+            st += `</div>
                 </div>
-              </div>
-          </div>`;
+             </div>
+           </div>`;
   }
   st += `</div>`;
   document.getElementById("rooot").innerHTML = st;
