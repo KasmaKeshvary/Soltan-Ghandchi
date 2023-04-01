@@ -31,7 +31,7 @@ var sampleJs = [
     Note1: "This is sometext about Photo 1 of Immediate Gratification Gallery",
     Photo2: "/Photo/Immediate Gratification/card22.png",
     Note2: "This is sometext about Photo 2 of Immediate Gratification Gallery",
-    Photo3: "/Photo/Immediate Gratification/main.jpeg",
+    Photo3: "/Photo/Immediate Gratification/4.png",
     Note3: "This is sometext about Photo 3 of Immediate Gratification Gallery",
     Photo4: "/Photo/Immediate Gratification/card24.png",
     Note4: "This is sometext about Photo 4 of Immediate Gratification Gallery",
@@ -50,13 +50,17 @@ var sampleJs = [
   {
     Name: "Circle of Desensitization",
     Photo1: "/Photo/Circle of Desensitization/card34.png",
-    Note1: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Note1:
+      "This is sometext about Photo 1 of Circle of Desensitization Gallery",
     Photo2: "/Photo/Circle of Desensitization/card35.png",
-    Note2: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Note2:
+      "This is sometext about Photo 2 of Circle of Desensitization Gallery",
     Photo3: "/Photo/Circle of Desensitization/card41.png",
-    Note3: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Note3:
+      "This is sometext about Photo 3 of Circle of Desensitization Gallery",
     Photo4: "/Photo/Circle of Desensitization/card42.png",
-    Note4: "This is sometext about Photo 1 of Circle of Desensitization Gallery",
+    Note4:
+      "This is sometext about Photo 4 of Circle of Desensitization Gallery",
   },
 ];
 
@@ -66,6 +70,8 @@ function showgallery(arr) {
   var st = `<div>`;
   for (let i = 0; i < arr.length; i++) {
     var countphoto = Object.keys(arr[i]);
+    var z = i + 1 ;
+    z = z > arr.length - 1 ? arr.length - 1 : z;
     st += `<div class="dropdown">
              <div class="name flex" id="dp-${i}">
                  <img class="galleryImg" src="${arr[i][countphoto[1]]}" >
@@ -86,6 +92,7 @@ function showgallery(arr) {
                        }          
             st += `</div>
                 </div>
+                <span class="nextSeries cursor" id="nxsr-${z}">NextSeries</span>
              </div>
            </div>`;
   }
@@ -97,12 +104,14 @@ function showgallery(arr) {
 let dropName = document.getElementsByClassName("name");
 let dropDownContent = document.getElementsByClassName("dropdown-content");
 let close = document.getElementsByClassName("close");
+let nextSeries = document.getElementsByClassName("nextSeries");
 var current = 0;
 var currentphoto = 1;
 
 for (let j = 0; j < dropDownContent.length; j++) {
   dropName[j].addEventListener("click", dropdown);
   close[j].addEventListener("click", closeModal);
+  nextSeries[j].addEventListener("click", nextGallery);
 }
 
 var imgsw = {};
@@ -170,4 +179,9 @@ function nextpage() {
 function closeModal() {
   dropDownContent[current].classList.remove("show");
   dropDownContent[current].classList.add("hide");
+}
+
+function nextGallery(gl) {
+   closeModal();
+  dropdown(gl); 
 }

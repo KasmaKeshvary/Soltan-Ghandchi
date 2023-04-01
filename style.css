@@ -146,15 +146,6 @@ body {
   position: absolute;
 }
 
-.bottomphototext {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 28px;
-  color: rgba(128, 128, 128, 0.95);
-  margin-top: 2%;
-}
-
 .perviosImg,
 .nextImg {
   cursor: pointer;
@@ -188,6 +179,28 @@ body {
   display: block;
 }
 
+.bottomphototext {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  color: rgba(128, 128, 128, 0.95);
+  margin-top: 15%;
+  position: absolute;
+  left: -80%;
+  width: 35%;
+}
+
+.nextSeries {
+  color: rgba(128, 128, 128, 0.95);
+  position: absolute;
+  bottom: 10px;
+  right: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: inherit;
+}
+
 .show {
   display: block;
 }
@@ -196,11 +209,19 @@ body {
   .changeImg {
     width: 50%;
   }
+
+  .bottomphototext {
+    left: -45%;
+  }
 }
 
 @media screen and (max-width: 1000px) {
   .changeImg {
     width: 70%;
+  }
+
+  .bottomphototext {
+    left: -15%;
   }
 }
 
@@ -211,16 +232,18 @@ body {
 
   .perviosImg,
   .nextImg {
-   top: 45%;
+    top: 45%;
+  }
+
+ .bottomphototext {
+    left: 5%;
   }
 
 }
 
 @media screen and (max-width: 350px) {
-
   .perviosImg,
   .nextImg {
-   top: 35%;
+    top: 35%;
   }
-
 }
